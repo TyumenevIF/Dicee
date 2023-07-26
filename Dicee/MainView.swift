@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol MainViewDelegate: AnyObject {
     func mainView(_ view: MainView, rollButtonPressed button: UIButton)
@@ -52,7 +53,7 @@ class MainView: UIView {
         let button = UIButton()
         button.setTitle("Roll", for: .normal)
         button.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 30)
-        button.tintColor = .red
+        button.setTitleColor(.white, for: .normal)
         button.contentHorizontalAlignment = .center
         button.backgroundColor = UIColor(red: 155/255, green: 28/255, blue: 31/255, alpha: 1.0)
         button.addTarget(self, action: #selector(rollButtonPressed), for: .touchUpInside)
