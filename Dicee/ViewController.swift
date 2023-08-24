@@ -19,12 +19,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.delegate = self
-        setViews()
+        setSubviews()
         setupConstraints()
     }
     
     // MARK: - Private Methods
-    private func setViews() {
+    private func setSubviews() {
         view.addSubview(mainView)
     }
     

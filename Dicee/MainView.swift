@@ -49,7 +49,7 @@ class MainView: UIView {
         return imageView
     }()
     
-    private let rollButton: UIButton = {
+    lazy var rollButton: UIButton = {
         let button = UIButton()
         button.setTitle("Roll", for: .normal)
         button.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 30)
@@ -63,8 +63,8 @@ class MainView: UIView {
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addViews()
-        addConstraints()
+        setSubviews()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -72,7 +72,7 @@ class MainView: UIView {
     }
     
     // MARK: - Private Methods
-    private func addViews() {
+    private func setSubviews() {
         addSubview(backgroundImageView)
         addSubview(logoImageView)
         addSubview(diceImageView1)
@@ -80,7 +80,7 @@ class MainView: UIView {
         addSubview(rollButton)
     }
     
-    private func addConstraints() {
+    private func setupConstraints() {
         backgroundImageView.snp.makeConstraints { make in
             make.top.bottom.leading.trailing.equalToSuperview()
         }
